@@ -37,6 +37,7 @@ public class Main
 
     ArrayList <HashMap.Entry<String, Integer>> wordsSorted = new ArrayList<HashMap.Entry<String, Integer>>();
     wordsSorted.addAll(countHashMap.entrySet());
+    
 
     Collections.sort(wordsSorted, new Comparator<HashMap.Entry<String, Integer>>()
      {
@@ -45,21 +46,32 @@ public class Main
             return o2.getValue() - o1.getValue();
          }
     });
+    
+    ArrayList <HashMap.Entry<String, Integer>> sortList = new ArrayList<HashMap.Entry<String, Integer>>();
+    sortList.addAll(wordsSorted.subList(0, 49));
+    
 
-    ArrayList <wordsSorted> sortedCount = new ArrayList <wordsSorted>();
-
-    Collections.sort(sortedCount.subList(0, 49), new Comparator<HashMap.Entry<String, Integer>>()
+    Collections.sort(sortList, new Comparator<HashMap.Entry<String, Integer>>()
     {
         public int compare(HashMap.Entry<String, Integer> o1, HashMap.Entry<String, Integer> o2){
             return o1.getKey().compareToIgnoreCase(o2.getKey());
         }
     });
-    for (HashMap.Entry<String, Integer> w : sortedCount)
+    
+    System.out.println();
+    System.out.println("Sorted by Count");
+    for (HashMap.Entry<String, Integer> w : wordsSorted)
         { 
-         System.out.println("Word " + w.getKey() + ", Count " + w.getValue());   
+         System.out.println("Word " + w.getKey() + ", Count " + w.getValue());  
         
         }
-
+    System.out.println();
+        System.out.println("Alphabetically by Word");   
+    for (HashMap.Entry<String, Integer> w : sortList)
+        { 
+         System.out.println("Word " + w.getKey() + ", Count " + w.getValue());  
+        
+        }
     }
 
    

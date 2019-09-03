@@ -11,7 +11,7 @@ public class Main
     
    words.setWord(words.getWord().replaceAll("[[\\.\\?\\!\\,\\;\\:\\{\\}\\(\\)\\']]", ""));
    
-   String[] wordsArray = words.getWord().split(" +");
+   String[] wordsArray = words.getWord().split(" ");
     System.out.println(Arrays.toString(wordsArray));
     // System.out.println(wordsArray);
 
@@ -57,19 +57,19 @@ public class Main
             return o1.getKey().compareToIgnoreCase(o2.getKey());
         }
     });
-    
+
     System.out.println();
     System.out.println("Sorted by Count");
     for (HashMap.Entry<String, Integer> w : wordsSorted)
         { 
-         System.out.println("Word " + w.getKey() + ", Count " + w.getValue());  
+         System.out.println("Word: " + w.getKey() + ", Count: " + w.getValue());  
         
         }
     System.out.println();
         System.out.println("Alphabetically by Word");   
     for (HashMap.Entry<String, Integer> w : sortList)
         { 
-         System.out.println("Word " + w.getKey() + ", Count " + w.getValue());  
+         System.out.println("Word: " + w.getKey() + ", Count: " + w.getValue());  
         
         }
     }

@@ -1,5 +1,5 @@
 # Project Top Word Counts in A String of Text
-
+  
 A student that completes this project show that they can:
 * create and use Java loops
 * create and use Java conditionals
